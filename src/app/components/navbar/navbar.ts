@@ -12,7 +12,6 @@ interface NavItem {
   imports: [RouterLink],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css',
 })
 export class Navbar {
   mobileMenuOpen = signal(false);

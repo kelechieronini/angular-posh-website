@@ -1,27 +1,44 @@
-<nav>
-  <div class="nav-container">
+<nav class="sticky top-0 z-100 border-b border-black/[0.162] bg-white">
+  <div class="flex items-center justify-between px-7.5 py-4">
     <a routerLink="/">
-      <img src="/images/posh-logo.png" alt="logo" width="89px" height="49px" />
+      <img src="/images/posh-logo.png" alt="logo" width="89" height="49" />
     </a>
 
-    <ul class="nav-links" [class.open]="mobileMenuOpen()">
+    <ul
+      [class.hidden]="!mobileMenuOpen()"
+      class="absolute left-0 right-0 top-full flex flex-col gap-0 bg-white px-5 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.1)] md:static md:flex md:flex-row md:gap-5 md:bg-transparent md:p-0 md:shadow-none"
+    >
       @for (item of navItems; track item.label) {
-        <li class="nav-item">
+        <li
+          class="group relative list-none border-b border-[#f0f0f0] px-0 py-3 text-[15px] font-medium text-[#000000BC] transition-all duration-300 hover:text-[#007AFF] md:border-0 md:p-1.5"
+        >
           @if (item.children) {
-            <span class="nav-label">
+            <span class="flex cursor-pointer items-center gap-1">
               {{ item.label }}
+
               <iconify-icon icon="codicon:chevron-down" width="14" height="14"></iconify-icon>
             </span>
 
-            <ul class="dropdown-menu">
+            <!-- Dropdown -->
+            <ul
+              class="absolute right-0 top-[calc(100%+16px)] z-10 flex min-w-55 translate-y-1.5 flex-col gap-0 rounded-md bg-white py-2.5 opacity-0 invisible shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+            >
               @for (child of item.children; track child.label) {
-                <li>
-                  <a [routerLink]="child.route">{{ child.label }}</a>
+                <li class="w-full list-none">
+                  <a
+                    [routerLink]="child.route"
+                    class="block whitespace-nowrap px-5 py-2.5 text-[14px] font-medium text-[#6a6a6a] no-underline hover:bg-[#f5f8ff] hover:text-[#007AFF]"
+                  >
+                    {{ child.label }}
+                  </a>
                 </li>
               }
             </ul>
           } @else {
-            <a class="nav-label" [routerLink]="item.route">
+            <a
+              class="flex cursor-pointer items-center gap-1 no-underline"
+              [routerLink]="item.route"
+            >
               {{ item.label }}
             </a>
           }
@@ -29,8 +46,9 @@
       }
     </ul>
 
+    <!-- Mobile Toggle -->
     <button
-      class="mobile-toggle"
+      class="block cursor-pointer border-0 bg-transparent text-black md:hidden"
       (click)="toggleMobileMenu()"
       [attr.aria-label]="mobileMenuOpen() ? 'Close menu' : 'Open menu'"
     >
