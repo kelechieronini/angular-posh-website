@@ -5,7 +5,6 @@ import { Button } from '../button/button';
   selector: 'app-cta',
   imports: [Button],
   templateUrl: './cta.html',
-  styleUrl: './cta.css',
 })
 export class Cta {
   callouts: string[] = [

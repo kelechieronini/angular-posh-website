@@ -1,5 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms';
 
 function allFieldsRequiredValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -7,7 +14,11 @@ function allFieldsRequiredValidator(): ValidatorFn {
     const missingFields: string[] = [];
 
     for (const key of Object.keys(group.controls)) {
-      if (group.controls[key].value === null || group.controls[key].value === undefined || group.controls[key].value === '') {
+      if (
+        group.controls[key].value === null ||
+        group.controls[key].value === undefined ||
+        group.controls[key].value === ''
+      ) {
         missingFields.push(key);
       }
     }
@@ -22,7 +33,6 @@ import { ValidatorFn } from '@angular/forms';
   selector: 'app-contact',
   imports: [ReactiveFormsModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.css',
 })
 export class Contact {
   submitted = signal(false);
@@ -37,7 +47,7 @@ export class Contact {
         subject: ['', Validators.required],
         message: ['', Validators.required],
       },
-      { validators: allFieldsRequiredValidator() }
+      { validators: allFieldsRequiredValidator() },
     );
   }
 

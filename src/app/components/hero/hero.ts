@@ -5,7 +5,6 @@ import { Button } from '../button/button';
   selector: 'app-hero',
   imports: [Button],
   templateUrl: './hero.html',
-  styleUrl: './hero.css',
 })
 export class Hero {
   headline = input<string>('Create remarkable websites');

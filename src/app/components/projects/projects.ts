@@ -11,7 +11,6 @@ export interface Showcase {
   selector: 'app-projects',
   imports: [],
   templateUrl: './projects.html',
-  styleUrl: './projects.css',
 })
 export class Projects {
   projects: Showcase[] = [

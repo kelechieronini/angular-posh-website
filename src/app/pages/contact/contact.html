@@ -1,56 +1,108 @@
-<section class="contact-section">
-  <div class="container-custom">
+<section class="bg-[#f9f9f9] py-10 md:py-25">
+  <div class="px-4 sm:px-6 lg:px-0">
     @if (submitted()) {
-      <div class="thank-you">
-        <h2>Thank you!</h2>
-        <p>Your message has been sent successfully. We'll get back to you soon.</p>
-        <button type="button" (click)="resetForm()">Send another message</button>
+      <div class="py-20 text-center h-screen">
+        <h2 class="mb-4 text-[36px] font-semibold text-[#1a1a1a]">Thank you!jjj</h2>
+
+        <p class="mb-8 text-[16px] text-[#6a6a6a]">
+          Your message has been sent successfully. We'll get back to you soon.
+        </p>
+
+        <button
+          type="button"
+          (click)="resetForm()"
+          class="rounded-xs bg-[#007AFF] px-10 py-3.5 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#0569d4]"
+        >
+          Send another message
+        </button>
       </div>
     } @else {
-      <div class="contact-container">
-        <div class="contact-info">
-          <h2>Get in touch</h2>
-          <p>Have a question or want to work together? Fill out the form and we'll get back to you as soon as possible.</p>
+      <div class="grid grid-cols-1 items-start gap-10 md:grid-cols-[1fr_1.5fr] md:gap-20 lg:px-45">
+        <div>
+          <h2 class="mb-5 text-[32px] font-semibold text-[#1a1a1a] md:text-[36px]">Get in touch</h2>
+
+          <p class="text-[16px] leading-[1.7] text-[#6a6a6a]">
+            Have a question or want to work together? Fill out the form and we'll get back to you as
+            soon as possible.
+          </p>
         </div>
 
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name" type="text" formControlName="name" placeholder="Your name" />
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+          <div class="flex flex-col gap-1.5">
+            <label for="name" class="text-[14px] font-semibold text-[#1a1a1a]"> Name </label>
+
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Your name"
+              class="rounded-sm border border-[#d0d0d0] bg-white px-4 py-3 text-[15px] transition-colors duration-300 focus:border-[#007AFF] focus:outline-none"
+            />
+
             @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
-              <span class="error">Name is required.</span>
+              <span class="text-[13px] text-[#e05353]"> Name is required. </span>
             }
           </div>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" formControlName="email" placeholder="your@email.com" />
+          <div class="flex flex-col gap-1.5">
+            <label for="email" class="text-[14px] font-semibold text-[#1a1a1a]"> Email </label>
+
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="your@email.com"
+              class="rounded-sm border border-[#d0d0d0] bg-white px-4 py-3 text-[15px] transition-colors duration-300 focus:border-[#007AFF] focus:outline-none"
+            />
+
             @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
               @if (contactForm.get('email')?.errors?.['required']) {
-                <span class="error">Email is required.</span>
+                <span class="text-[13px] text-[#e05353]"> Email is required. </span>
               } @else if (contactForm.get('email')?.errors?.['email']) {
-                <span class="error">Please enter a valid email address.</span>
+                <span class="text-[13px] text-[#e05353]">
+                  Please enter a valid email address.
+                </span>
               }
             }
           </div>
 
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input id="subject" type="text" formControlName="subject" placeholder="Subject" />
+          <div class="flex flex-col gap-1.5">
+            <label for="subject" class="text-[14px] font-semibold text-[#1a1a1a]"> Subject </label>
+
+            <input
+              id="subject"
+              type="text"
+              formControlName="subject"
+              placeholder="Subject"
+              class="rounded-sm border border-[#d0d0d0] bg-white px-4 py-3 text-[15px] transition-colors duration-300 focus:border-[#007AFF] focus:outline-none"
+            />
+
             @if (contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid) {
-              <span class="error">Subject is required.</span>
+              <span class="text-[13px] text-[#e05353]"> Subject is required. </span>
             }
           </div>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" formControlName="message" rows="5" placeholder="Your message..."></textarea>
+          <div class="flex flex-col gap-1.5">
+            <label for="message" class="text-[14px] font-semibold text-[#1a1a1a]"> Message </label>
+
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="5"
+              placeholder="Your message..."
+              class="resize-y rounded-sm border border-[#d0d0d0] bg-white px-4 py-3 text-[15px] transition-colors duration-300 focus:border-[#007AFF] focus:outline-none"
+            ></textarea>
+
             @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
-              <span class="error">Message is required.</span>
+              <span class="text-[13px] text-[#e05353]"> Message is required. </span>
             }
           </div>
 
-          <button type="submit" [disabled]="contactForm.invalid" class="submit-btn">
+          <button
+            type="submit"
+            [disabled]="contactForm.invalid"
+            class="self-start rounded-xs bg-[#007AFF] px-10 py-3.5 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#0569d4] disabled:cursor-not-allowed disabled:bg-[#c0c0c0]"
+          >
             Send Message
           </button>
         </form>
