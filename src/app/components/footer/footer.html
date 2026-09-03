@@ -1,42 +1,76 @@
-<footer>
-  <div class="container footer-container">
-    <p class="footer-copyright">&copy; {{ currentYear }} POSH &trade; Inc.</p>
+<footer class="bg-[#0c151a] px-7.5 py-10">
+  <div
+    class="container-custom flex flex-col items-center justify-between gap-6 md:flex-row md:gap-0"
+  >
+    <p class="text-center text-[14px] text-[#949494] md:text-left">
+      &copy; {{ currentYear }} POSH &trade; Inc.
+    </p>
 
-    <ul class="footer-socials">
+    <ul class="flex list-none gap-5.5 p-0">
       <li>
-        <a href="#" aria-label="Facebook">
-          <img src="/images/facebook.svg" width="18" height="18" alt="Facebook" fill="#fff" />
+        <a
+          href="#"
+          aria-label="Facebook"
+          class="flex text-[#949494] transition-colors duration-300 hover:text-white"
+        >
+          <img src="/images/facebook.svg" width="18" height="18" alt="Facebook" />
         </a>
       </li>
 
       <li>
-        <a href="#" aria-label="Twitter">
+        <a
+          href="#"
+          aria-label="Twitter"
+          class="flex text-[#949494] transition-colors duration-300 hover:text-white"
+        >
           <img src="/images/twitter.svg" width="18" height="18" alt="Twitter" />
         </a>
       </li>
 
       <li>
-        <a href="#" aria-label="Instagram">
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="flex text-[#949494] transition-colors duration-300 hover:text-white"
+        >
           <img src="/images/instagram.svg" width="18" height="18" alt="Instagram" />
         </a>
       </li>
 
       <li>
-        <a href="#" aria-label="Behance">
+        <a
+          href="#"
+          aria-label="Behance"
+          class="flex text-[#949494] transition-colors duration-300 hover:text-white"
+        >
           <img src="/images/behance.svg" width="18" height="18" alt="Behance" />
         </a>
       </li>
 
       <li>
-        <a href="#" aria-label="Dribbble">
+        <a
+          href="#"
+          aria-label="Dribbble"
+          class="flex text-[#949494] transition-colors duration-300 hover:text-white"
+        >
           <img src="/images/dribbble.svg" width="18" height="18" alt="Dribbble" />
         </a>
       </li>
     </ul>
 
-    <p class="footer-credit">
-      Made with <span aria-hidden="true">&#10084;</span> by
-      <a href="https://themewagon.com" target="_blank" rel="noopener">ThemeWagon</a>
+    <!-- Credit -->
+    <p class="text-center text-[14px] text-[#949494] md:text-right">
+      Made with
+      <span class="text-[#e05353]" aria-hidden="true">&#10084;</span>
+      by
+      <a
+        href="https://themewagon.com"
+        target="_blank"
+        rel="noopener"
+        class="text-[#4da3ff] no-underline hover:underline"
+      >
+        ThemeWagon
+      </a>
     </p>
   </div>
 </footer>
