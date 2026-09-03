@@ -1,23 +1,30 @@
-<section id="project-section">
-  <div id="project-lead-text-container">
-    <p id="project-lead-text">
-      No matter the task, the new POSH is up to it — and even more. See
-      for yourself — all the pre-made demos, inspired by world's finest
-      websites, are made with POSH. And this is only a tip of the iceberg
-      of what you will get.
+<section class="bg-[#0c151a] px-7.5">
+  <div class="flex flex-col items-center justify-center md:py-42.5 py-20">
+    <p
+      class="md:mb-15 mb-7 w-full max-w-225 text-center md:text-[30px] text-20px font-extralight leading-[1.6] text-[#949494]"
+    >
+      No matter the task, the new POSH is up to it — and even more. See for yourself — all the
+      pre-made demos, inspired by world's finest websites, are made with POSH. And this is only a
+      tip of the iceberg of what you will get.
     </p>
 
-    <div id="project-lead-text-line"></div>
+    <div class="h-0.75 w-25 bg-[#949494]"></div>
   </div>
 
-  <div id="projects">
+  <div class="grid grid-cols-1 gap-10 md:py-12.5 md:grid-cols-2 lg:grid-cols-3">
     @for (column of projectColumns; track $index) {
-      <div class="project-card-section-container">
+      <div class="flex flex-col gap-17.5">
         @for (i of column; track $index) {
-          <a href="#" class="project-card">
-            <h3>{{ projects[i].title }}</h3>
-            <p>{{ projects[i].description }}</p>
-            <img [src]="projects[i].image" [alt]="projects[i].alt" />
+          <a href="#" class="flex flex-col gap-1.5 text-center text-white no-underline">
+            <h3 class="text-[22px] font-semibold hover:underline">
+              {{ projects[i].title }}
+            </h3>
+
+            <p class="mb-3.5 text-[14px] text-[#aaa]">
+              {{ projects[i].description }}
+            </p>
+
+            <img [src]="projects[i].image" [alt]="projects[i].alt" class="w-full rounded-md" />
           </a>
         }
       </div>
