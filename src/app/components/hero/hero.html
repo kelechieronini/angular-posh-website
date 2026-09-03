@@ -1,14 +1,28 @@
-<section id="hero-section" class="container-custom">
-  <p id="head-text">INTRODUCING POSH</p>
+<section class="container-custom flex flex-col items-center justify-center gap-9 mt-28">
+  <p class="font-medium tracking-[1px] text-xs">INTRODUCING POSH</p>
 
-  <div>
-    <p id="lead-text">{{ headline() }}</p>
-    <p id="support-text">{{ subtext() }}</p>
+  <div class="text-center">
+    <p class="text-[50px] font-extralight">
+      {{ headline() }}
+    </p>
+
+    <p class="mt-2 text-center text-[22px] font-light text-[#6A6A6A]">
+      {{ subtext() }}
+    </p>
   </div>
 
-  <div id="hero-cta">
+  <div class="flex flex-col gap-2">
     <app-button buttonText="Explore demos" buttonType="primary" (click)="onCtaClick()" />
-    <p>or <a href="https://themewagon.com/themes/posh"> Purchase POSH →</a></p>
+
+    <p>
+      or
+      <a
+        href="https://themewagon.com/themes/posh"
+        class="text-[#007AFF] no-underline hover:underline"
+      >
+        Purchase POSH →
+      </a>
+    </p>
   </div>
 
   <img src="/images/showcase-01.jpg" alt="posh apps" />
