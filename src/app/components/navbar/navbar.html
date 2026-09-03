@@ -7,21 +7,33 @@
     <ul class="nav-links" [class.open]="mobileMenuOpen()">
       @for (item of navItems; track item.label) {
         <li class="nav-item">
-          <span class="nav-label">
-            {{ item.label }}
-            <iconify-icon icon="codicon:chevron-down" width="14" height="14"></iconify-icon>
-          </span>
+          @if (item.children) {
+            <span class="nav-label">
+              {{ item.label }}
+              <iconify-icon icon="codicon:chevron-down" width="14" height="14"></iconify-icon>
+            </span>
 
-          <ul class="dropdown-menu">
-            @for (child of item.children; track child.label) {
-              <li><a [routerLink]="child.route">{{ child.label }}</a></li>
-            }
-          </ul>
+            <ul class="dropdown-menu">
+              @for (child of item.children; track child.label) {
+                <li>
+                  <a [routerLink]="child.route">{{ child.label }}</a>
+                </li>
+              }
+            </ul>
+          } @else {
+            <a class="nav-label" [routerLink]="item.route">
+              {{ item.label }}
+            </a>
+          }
         </li>
       }
     </ul>
 
-    <button class="mobile-toggle" (click)="toggleMobileMenu()" [attr.aria-label]="mobileMenuOpen() ? 'Close menu' : 'Open menu'">
+    <button
+      class="mobile-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-label]="mobileMenuOpen() ? 'Close menu' : 'Open menu'"
+    >
       @if (mobileMenuOpen()) {
         <iconify-icon icon="codicon:close" width="24" height="24"></iconify-icon>
       } @else {

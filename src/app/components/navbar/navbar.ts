@@ -3,7 +3,8 @@ import { RouterLink } from '@angular/router';
 
 interface NavItem {
   label: string;
-  children: { label: string; route: string }[];
+  route?: string;
+  children?: { label: string; route: string }[];
 }
 
 @Component({
@@ -33,24 +34,17 @@ export class Navbar {
         { label: 'Travel Agency', route: '/' },
       ],
     },
+
     {
-      label: 'Pages',
-      children: [
-        { label: 'About', route: '/about' },
-        { label: 'Careers', route: '/' },
-        { label: 'Pricing', route: '/' },
-        { label: 'Contact', route: '/contact' },
-      ],
+      label: 'About',
+      route: '/about',
     },
+
     {
-      label: 'Components',
-      children: [
-        { label: 'Buttons', route: '/' },
-        { label: 'Cards', route: '/' },
-        { label: 'Forms', route: '/' },
-        { label: 'Navigation', route: '/' },
-      ],
+      label: 'Contact',
+      route: '/contact',
     },
+
     {
       label: 'Docs',
       children: [
