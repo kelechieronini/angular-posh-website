@@ -1,15 +1,23 @@
-<section class="final-section">
-  <div class="container-custom final-grid">
+<section class="px-4 py-25 sm:px-6 md:py-30 lg:py-35">
+  <div class="lg:mx-45 grid grid-cols-1 gap-y-15 md:grid-cols-2 md:gap-x-25 md:gap-y-22.5">
     @for (callout of callouts; track $index) {
-      <div class="final-item">
-        <p>{{ callout }}</p>
+      <div class="border-t border-[#e05353] pt-5">
+        <p
+          class="text-[32px] font-light leading-[1.35] text-[#1a1a1a] sm:text-[38px] md:text-[40px]"
+        >
+          {{ callout }}
+        </p>
       </div>
     }
   </div>
 
-  <div class="final-cta">
-    <div class="final-cta-line"></div>
-    <p>Want to see the magic? Start creating with POSH</p>
+  <div class="mt-25 flex flex-col items-center gap-8 text-center md:mt-35">
+    <div class="h-px w-15 bg-[#c9c9c9]"></div>
+
+    <p class="text-[18px] font-light text-[#1a1a1a] sm:text-[20px] md:text-[22px]">
+      Want to see the magic? Start creating with POSH
+    </p>
+
     <app-button buttonText="Purchase now" buttonType="secondary" />
   </div>
 </section>
