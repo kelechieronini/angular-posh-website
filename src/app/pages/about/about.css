@@ -1,0 +1,51 @@
+/* ABOUT PAGE */
+.about-section {
+    padding: 120px 0 80px;
+}
+
+.about-section h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+.about-lead {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #6a6a6a;
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.about-card {
+    padding: 32px;
+    border-top: 3px solid #007AFF;
+    background: #f9f9f9;
+    border-radius: 0 0 6px 6px;
+}
+
+.about-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.about-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6a6a6a;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}

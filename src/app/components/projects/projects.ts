@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 
+export interface Showcase {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+}
+
 @Component({
   selector: 'app-projects',
   imports: [],
@@ -7,7 +14,7 @@ import { Component } from '@angular/core';
   styleUrl: './projects.css',
 })
 export class Projects {
-  projects = [
+  projects: Showcase[] = [
     {
       title: 'Landing NOKIA',
       description: '(Nokia 5)',

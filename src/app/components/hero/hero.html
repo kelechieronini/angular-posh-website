@@ -2,14 +2,12 @@
   <p id="head-text">INTRODUCING POSH</p>
 
   <div>
-    <p id="lead-text">Create <span>remarkable</span> websites</p>
-
-    <p id="support-text">Anything you can design, you can design better.</p>
+    <p id="lead-text">{{ headline() }}</p>
+    <p id="support-text">{{ subtext() }}</p>
   </div>
 
   <div id="hero-cta">
-    <app-button buttonText="Explore demos" buttonType="primary" />
-
+    <app-button buttonText="Explore demos" buttonType="primary" (click)="onCtaClick()" />
     <p>or <a href="https://themewagon.com/themes/posh"> Purchase POSH →</a></p>
   </div>
 
