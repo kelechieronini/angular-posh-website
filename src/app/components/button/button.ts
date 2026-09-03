@@ -6,6 +6,7 @@ import { Component, input } from '@angular/core';
   templateUrl: './button.html',
 })
 export class Button {
-  buttonType = input<'primary' | 'secondary'>('primary');
+  buttonType = input<'primary' | 'secondary' | 'contact'>('primary');
   buttonText = input<string>('');
+  disabled = input<boolean>(false);
 }

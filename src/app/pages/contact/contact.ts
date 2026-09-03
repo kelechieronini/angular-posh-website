@@ -28,10 +28,11 @@ function allFieldsRequiredValidator(): ValidatorFn {
 }
 
 import { ValidatorFn } from '@angular/forms';
+import { Button } from "../../components/button/button";
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, Button],
   templateUrl: './contact.html',
 })
 export class Contact {

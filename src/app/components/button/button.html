@@ -1,9 +1,12 @@
 <button
+  [disabled]="disabled()"
   class="h-12 rounded-sm text-base transition-all duration-300 cursor-pointer"
   [class]="
     buttonType() === 'secondary'
       ? 'w-50 bg-white border border-[#007AFF] text-[#007AFF] font-semibold hover:bg-[#007AFF] hover:text-white'
-      : 'w-full bg-[#007AFF] text-white hover:bg-[#0569d4]'
+      : buttonType() === 'contact'
+        ? 'w-fit bg-[#007AFF] px-10 text-white font-semibold hover:bg-[#0569d4] disabled:bg-[#c0c0c0] disabled:cursor-not-allowed'
+        : 'w-full bg-[#007AFF] text-white hover:bg-[#0569d4]'
   "
 >
   {{ buttonText() }}

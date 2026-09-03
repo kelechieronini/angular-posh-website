@@ -1,8 +1,8 @@
 <section class="bg-[#f9f9f9] py-10 md:py-25">
   <div class="px-4 sm:px-6 lg:px-0">
     @if (submitted()) {
-      <div class="py-20 text-center h-screen">
-        <h2 class="mb-4 text-[36px] font-semibold text-[#1a1a1a]">Thank you!jjj</h2>
+      <div class="pt-20 text-center h-[70vh]">
+        <h2 class="mb-4 text-[36px] font-semibold text-[#1a1a1a]">Thank you!</h2>
 
         <p class="mb-8 text-[16px] text-[#6a6a6a]">
           Your message has been sent successfully. We'll get back to you soon.
@@ -11,7 +11,7 @@
         <button
           type="button"
           (click)="resetForm()"
-          class="rounded-xs bg-[#007AFF] px-10 py-3.5 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#0569d4]"
+          class="rounded-xs bg-[#007AFF] px-10 py-3.5 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#0569d4] cursor-pointer"
         >
           Send another message
         </button>
@@ -98,13 +98,11 @@
             }
           </div>
 
-          <button
-            type="submit"
+          <app-button
+            buttonText="Send Message"
+            buttonType="contact"
             [disabled]="contactForm.invalid"
-            class="self-start rounded-xs bg-[#007AFF] px-10 py-3.5 text-[15px] font-semibold text-white transition-colors duration-300 hover:bg-[#0569d4] disabled:cursor-not-allowed disabled:bg-[#c0c0c0]"
-          >
-            Send Message
-          </button>
+          />
         </form>
       </div>
     }
