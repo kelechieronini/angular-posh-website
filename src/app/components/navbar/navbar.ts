@@ -51,11 +51,7 @@ export class Navbar {
 
     {
       label: 'Docs',
-      children: [
-        { label: 'Getting Started', route: '/' },
-        { label: 'Installation', route: '/' },
-        { label: 'Changelog', route: '/' },
-      ],
+      route: '/docs',
     },
   ];
 
