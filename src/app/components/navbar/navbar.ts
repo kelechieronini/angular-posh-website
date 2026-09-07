@@ -1,5 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 interface NavItem {
   label: string;
@@ -9,12 +9,17 @@ interface NavItem {
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './navbar.html',
 })
 export class Navbar {
+  private router = inject(Router);
   mobileMenuOpen = signal(false);
+
+  isHomeActive(): boolean {
+    return this.router.url === '/';
+  }
 
   navItems: NavItem[] = [
     {
