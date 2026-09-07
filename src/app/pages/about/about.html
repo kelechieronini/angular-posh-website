@@ -1,4 +1,4 @@
-<section class="md:py-20 py-10 lg:px-45">
+<section class="md:py-20 py-10 lg:px-10 xl:px-45">
   <div class="px-8">
     <h1 class="mb-6 md:text-[48px] text-[30px] font-semibold text-[#1a1a1a]">About POSH</h1>
 
@@ -9,31 +9,12 @@
   </div>
 
   <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-    <div class="rounded-b-md border-t-[3px] border-[#007AFF] bg-[#f9f9f9] p-8">
-      <h3 class="mb-4 text-[22px] font-semibold text-[#1a1a1a]">Our Mission</h3>
+    @for (card of cards; track card.title) {
+      <div class="rounded-b-md border-t-[3px] border-[#007AFF] bg-[#f9f9f9] p-8">
+        <h3 class="mb-4 text-[22px] font-semibold text-[#1a1a1a]">{{ card.title }}</h3>
 
-      <p class="text-[15px] leading-[1.7] text-[#6a6a6a]">
-        We believe in creating tools that empower designers and developers to build beautiful
-        websites without compromise.
-      </p>
-    </div>
-
-    <div class="rounded-b-md border-t-[3px] border-[#007AFF] bg-[#f9f9f9] p-8">
-      <h3 class="mb-4 text-[22px] font-semibold text-[#1a1a1a]">Our Vision</h3>
-
-      <p class="text-[15px] leading-[1.7] text-[#6a6a6a]">
-        To set the standard for modern web templates by combining aesthetics with functionality in
-        every component we deliver.
-      </p>
-    </div>
-
-    <div class="rounded-b-md border-t-[3px] border-[#007AFF] bg-[#f9f9f9] p-8">
-      <h3 class="mb-4 text-[22px] font-semibold text-[#1a1a1a]">Our Values</h3>
-
-      <p class="text-[15px] leading-[1.7] text-[#6a6a6a]">
-        Quality, innovation, and attention to detail drive everything we do. Every pixel matters,
-        every interaction counts.
-      </p>
-    </div>
+        <p class="text-[15px] leading-[1.7] text-[#6a6a6a]">{{ card.description }}</p>
+      </div>
+    }
   </div>
 </section>
